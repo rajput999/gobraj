@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "10+", label: "Years guiding travellers" },
-  { value: "5,000+", label: "Happy travellers" },
-  { value: "25+", label: "Holy temples covered" },
+  { value: "30+", label: "Years guiding travellers" },
+  { value: "5,0000+", label: "Happy travellers" },
+  { value: "60+", label: "Holy temples covered" },
   { value: "4.9★", label: "Average traveller rating" },
 ];
 
