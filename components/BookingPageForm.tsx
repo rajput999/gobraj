@@ -7,6 +7,7 @@ import { CheckCircle2, Loader2, Minus, Plus, Send } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import type { BookingType } from "@/lib/booking";
+import { trackMetaEvent } from "@/lib/meta";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -60,6 +61,7 @@ export default function BookingPageForm() {
       const json = await res.json();
       if (json.success === "true" || json.success === true) {
         setStatus("success");
+        trackMetaEvent("Lead", { content_name: `${type} booking`, content_category: type });
       } else {
         throw new Error(json.message || "Something went wrong.");
       }

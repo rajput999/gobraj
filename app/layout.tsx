@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import MetaPixel from "@/components/MetaPixel";
 
 const playfair = Playfair_Display({
   variable: "--font-display",
@@ -45,12 +46,16 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID || siteConfig.googleAnalyticsId;
   const gaEnabled = /^G-[A-Z0-9]{4,}$/.test(gaId) && !gaId.includes("XXXX");
 
+  const pixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID || siteConfig.metaPixelId;
+  const pixelEnabled = /^\d{6,}$/.test(pixelId);
+
   return (
     <html
       lang="en"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        {pixelEnabled && <MetaPixel pixelId={pixelId} />}
         {children}
       </body>
       {gaEnabled && <GoogleAnalytics gaId={gaId} />}

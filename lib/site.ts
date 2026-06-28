@@ -30,6 +30,13 @@ export const siteConfig = {
   //  (You can also set NEXT_PUBLIC_GA_ID in .env.local instead.)
   // -------------------------------------------------------------
   googleAnalyticsId: "",
+
+  // -------------------------------------------------------------
+  //  META (FACEBOOK) PIXEL
+  //  Your Pixel ID for Meta Ads tracking. Leave "" to disable.
+  //  (You can also set NEXT_PUBLIC_FB_PIXEL_ID in .env.local.)
+  // -------------------------------------------------------------
+  metaPixelId: "3432763876885744",
 } as const;
 
 export const navLinks = [

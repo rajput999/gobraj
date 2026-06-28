@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2, Phone, Sparkles, X } from "lucide-react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { siteConfig } from "@/lib/site";
+import { trackMetaEvent } from "@/lib/meta";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -103,6 +104,7 @@ export default function InterestPopup() {
       if (json.success === "true" || json.success === true) {
         setStatus("success");
         trackEvent("generate_lead", { source: "interest_popup", offer: "20_percent_off" });
+        trackMetaEvent("Lead", { content_name: "Interest popup", source: "homepage_popup" });
         // form filled — never show the popup again, on any future visit
         try {
           localStorage.setItem(SUBMITTED_KEY, "1");
