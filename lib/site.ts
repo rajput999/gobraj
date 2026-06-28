@@ -18,8 +18,8 @@ export const siteConfig = {
   // -------------------------------------------------------------
   bookingEmail: "abhishekgr154@gmail.com",
 
-  phone: "+91 98765 43210",
-  whatsapp: "+91 98765 43210",
+  phone: "+91 6395848115",
+  whatsapp: "+91 6395848115",
   address: "Vrindavan Parikrama Marg, Vrindavan, Uttar Pradesh 281121, India",
 
   // -------------------------------------------------------------
